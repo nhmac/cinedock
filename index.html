@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineDock | Personal Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">CINE<span>DOCK</span></div>
+    <p id="stats-counter">Loading collection...</p>
+  </header>
+
+  <main class="container">
+    <div id="main-grid" class="movie-grid"></div>
+  </main>
+
+  <nav class="dock-container">
+    <div class="dock">
+
+      <button class="dock-item active" data-filter="movie">
+        <span class="dock-text-label">MOVIES</span>
+      </button>
+
+      <button class="dock-item" data-filter="tv">
+        <span class="dock-text-label">TV SHOWS</span>
+      </button>
+
+      <div class="dock-separator"></div>
+
+      <select id="sortOrder" class="dock-select">
+        <option value="alpha">A - Z</option>
+        <option value="yearDesc">NEWEST</option>
+        <option value="yearAsc">OLDEST</option>
+      </select>
+
+      <div class="dock-separator"></div>
+
+      <div class="search-dock">
+        <input type="text" id="internalSearch" placeholder="Search..">
+      </div>
+
+    </div>
+  </nav>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+/* style.css */
+
+:root {
+  --bg-color: #080808;
+  --surface-color: #161616;
+  --accent-color: #a855f7;
+  --text-main: #ffffff;
+  --text-dim: #a0a0a0;
+  --dock-bg: rgba(28, 28, 30, 0.7);
+  --dock-border: rgba(255, 255, 255, 0.1);
+  --radius-lg: 16px;
+  --transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  overflow-x: hidden;
+  padding-bottom: 120px; /* Espaço para o Dock no fundo */
+}
+
+/* --- CABEÇALHO --- */
+.main-header {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.logo span { color: var(--accent-color); }
+
+#stats-counter {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* --- GRELHA PRINCIPAL --- */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+/* Estilos dos Cards */
+.poster-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface-color);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.poster-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+}
+
+.poster-card img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.poster-card:hover .overlay { opacity: 1; }
+
+.overlay h4 { margin: 0; font-size: 1rem; }
+.overlay span { color: var(--accent-color); font-weight: 800; font-size: 0.8rem; }
+
+/* --- APPLE DOCK (MENU INFERIOR) --- */
+.dock-container {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.dock {
+  background: var(--dock-bg);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--dock-border);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Estilo do Texto no Dock */
+.dock-text-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--text-main);
+  padding: 8px 12px;
+  transition: var(--transition);
+  opacity: 0.6;
+}
+
+.dock-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dock-item.active .dock-text-label {
+  opacity: 1;
+  color: var(--accent-color);
+}
+
+/* Indicador de ponto por baixo do ativo */
+.dock-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px white;
+}
+
+.dock-separator {
+  width: 1px;
+  height: 25px;
+  background: var(--dock-border);
+}
+
+/* --- ESTILO DROP_DOWN APPLE --- */
+.dock-select {
+  background: rgba(255, 255, 255, 0.05); /* Fundo quase invisível */
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  outline: none;
+  appearance: none; /* Remove a seta padrão feia */
+  -webkit-appearance: none;
+  transition: all 0.3s ease;
+
+  /* Adiciona uma seta personalizada discreta */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+/*.dock-select:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}*/
+
+.dock-select:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+}
+
+/* --- SEARCH DOCK UPGRADE --- */
+.search-dock {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Ícone de Lupa minimalista */
+.search-dock::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.search-dock input {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 12px 8px 35px; /* Espaço para a lupa */
+  border-radius: 12px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  width: 130px; /* Largura inicial curta */
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Efeito ao focar (macOS Style)
+.search-dock input:focus {
+  width: 220px;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.03);
+}*/
+
+/* Muda a cor do ícone quando foca */
+.search-dock:focus-within::before {
+  stroke: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+/* Placeholder discreto */
+.search-dock input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+}
+
+/* Estiliza as opções dentro do dropdown (Nota: suporte limitado em browsers) */
+.dock-select option {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px;
+}
+
+/* --- ADMIN UI FIX (Versão Posters Claros) --- */
+
+/* Ajusta a área de resultados */
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* No Admin, o overlay não cobre a imagem toda */
+#results .poster-card .overlay {
+  opacity: 1 !important;
+  background: linear-gradient(to top,
+    rgba(0,0,0,0.95) 0%,
+    rgba(0,0,0,0.7) 70%,
+    transparent 100%) !important;
+
+  height: 50%; /* Ocupa apenas metade inferior do card */
+  height: 50%; /* Ocupa apenas metade inferior do card */
+  top: auto;   /* Desativa o posicionamento no topo */
+  bottom: 0;   /* Fixa na base */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 10px;
+}
+
+/* Garante que a imagem do poster no admin não tem filtros escuros */
+#results .poster-card img {
+  filter: brightness(1) contrast(1) !important;
+  height: 230px; /* Altura controlada para o admin */
+  object-fit: cover;
+}
+
+/* Título mais curto para não ocupar espaço */
+#results .poster-card h4 {
+  font-size: 11px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  color: white;
+}
+
+/* Estilo dos botões no admin (mais compactos) */
+.add-btn {
+  width: 100%;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+}}
