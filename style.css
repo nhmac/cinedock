@@ -43,6 +43,56 @@ body {
   margin-top: 10px;
 }
 
+/* Contentor para alinhar o ponto e o texto */
+.status-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* O ponto de estado */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Animação de pulsação (Glow effect) */
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Ajuste no ID existente para remover a margem antiga */
+#stats-counter {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0; /* Removido o margin-top para alinhar pelo flex */
+}
+
 /* --- GRELHA PRINCIPAL --- */
 .container {
   max-width: 1400px;
