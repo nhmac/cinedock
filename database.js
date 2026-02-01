@@ -27,7 +27,7 @@ export const all_db = [
 {"id":299537,"type":"movie","title":"Captain Marvel","poster":"/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg","year":"2019"},
 {"id":61889,"type":"tv","title":"Marvel's Daredevil","poster":"/u6tICVagGwukuFPr0qBUwOqCKSn.jpg","year":"2015"},
 {"id":67178,"type":"tv","title":"Marvel's The Punisher","poster":"/tM6xqRKXoloH9UchaJEyyRE9O1w.jpg","year":"2017"},
-  {"id":603,"type":"movie","title":"The Matrix","poster":"/p96dm7sCMn4VYAStA6siNz30G1r.jpg","year":"1999","runtime":136},
+{"id":603,"type":"movie","title":"The Matrix","poster":"/p96dm7sCMn4VYAStA6siNz30G1r.jpg","year":"1999","runtime":136},
 {"id":605,"type":"movie","title":"The Matrix Revolutions","poster":"/bkkS61w94ZVMNVd8KEyyJl2tnY5.jpg","year":"2003","runtime":129},
 {"id":624860,"type":"movie","title":"The Matrix Resurrections","poster":"/8c4a8kE7PizaGQQnditMmI1xbRp.jpg","year":"2021","runtime":147},
 {"id":604,"type":"movie","title":"The Matrix Reloaded","poster":"/aA5qHS0FbSXO8PxcxUIHbDrJyuh.jpg","year":"2003","runtime":138},
@@ -140,8 +140,35 @@ export const all_db = [
 {"id":136315,"type":"tv","title":"The Bear","poster":"/eKfVzzEazSIjJMrw9ADa2x8ksLz.jpg","year":"2022","runtime":1292},
 {"id":9740,"type":"movie","title":"Hannibal","poster":"/v5wAZwRqpGWmyAaaJ8BBHYuNXnj.jpg","year":"2001","runtime":131},
 {"id":40008,"type":"tv","title":"Hannibal","poster":"/pbV2eLnKSIm1epSZt473UYfqaeZ.jpg","year":"2013","runtime":1755},
+{"id":65708,"type":"tv","title":"Taboo","poster":"/d7yvLU4f2hEByAXI7QgkPnvlMOT.jpg","year":"2017","runtime":480},
+{"id":71446,"type":"tv","title":"Money Heist","poster":"/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg","year":"2017","runtime":3157},
+{"id":47665,"type":"tv","title":"Black Sails","poster":"/mZcSwrDdw6cdOVgXm496DgwrQcQ.jpg","year":"2014","runtime":2280},
+{"id":284054,"type":"movie","title":"Black Panther","poster":"/uxzzxijgPIY7slzFvMotPv8wjKA.jpg","year":"2018","runtime":135},
+{"id":505642,"type":"movie","title":"Black Panther: Wakanda Forever","poster":"/sv1xJUazXeYqALzczSZ3O6nkH75.jpg","year":"2022","runtime":162},
+{"id":1726,"type":"movie","title":"Iron Man","poster":"/78lPtwv72eTNqFW9COBYI0dWDJa.jpg","year":"2008","runtime":126},
+{"id":10138,"type":"movie","title":"Iron Man 2","poster":"/6WBeq4fCfn7AN0o21W9qNcRF2l9.jpg","year":"2010","runtime":124},
+{"id":68721,"type":"movie","title":"Iron Man 3","poster":"/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg","year":"2013","runtime":130},
+{"id":102899,"type":"movie","title":"Ant-Man","poster":"/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg","year":"2015","runtime":117},
+{"id":640146,"type":"movie","title":"Ant-Man and the Wasp: Quantumania","poster":"/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg","year":"2023","runtime":125},
+{"id":363088,"type":"movie","title":"Ant-Man and the Wasp","poster":"/cFQEO687n1K6umXbInzocxcnAQz.jpg","year":"2018","runtime":119},
+{"id":566525,"type":"movie","title":"Shang-Chi and the Legend of the Ten Rings","poster":"/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg","year":"2021","runtime":132},
+{"id":524434,"type":"movie","title":"Eternals","poster":"/lFByFSLV5WDJEv3KabbdAF959F2.jpg","year":"2021","runtime":156},
+{"id":550,"type":"movie","title":"Fight Club","poster":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","year":"1999","runtime":139},
+{"id":273248,"type":"movie","title":"The Hateful Eight","poster":"/jIywvdPjia2t3eKYbjVTcwBQlG8.jpg","year":"2015","runtime":188},
+{"id":68718,"type":"movie","title":"Django Unchained","poster":"/7oWY8VDWW7thTzWh3OKYRkWUlD5.jpg","year":"2012","runtime":165},
+{"id":466272,"type":"movie","title":"Once Upon a Time... in Hollywood","poster":"/8j58iEBw9pOXFD2L0nt0ZXeHviB.jpg","year":"2019","runtime":162},
+{"id":27205,"type":"movie","title":"Inception","poster":"/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg","year":"2010","runtime":148},
+{"id":11324,"type":"movie","title":"Shutter Island","poster":"/nrmXQ0zcZUL8jFLrakWc90IR8z9.jpg","year":"2010","runtime":138},
+{"id":4247,"type":"movie","title":"Scary Movie","poster":"/fVQFPRuw3yWXojYDJvA5EoFjUOY.jpg","year":"2000","runtime":88},
+{"id":4257,"type":"movie","title":"Scary Movie 4","poster":"/sEqFdw1wLtY94RKCSPolsHWzn6r.jpg","year":"2006","runtime":83},
+{"id":4248,"type":"movie","title":"Scary Movie 2","poster":"/7Eb1JWK0Cb0rbfsYjwfc9g0PbQH.jpg","year":"2001","runtime":82},
+{"id":4256,"type":"movie","title":"Scary Movie 3","poster":"/lpNG1nx67rvYze1b1R9q0YoSzrC.jpg","year":"2003","runtime":84},
+{"id":176,"type":"movie","title":"Saw","poster":"/rLNSOudrayDBo1uqXjrhxcjODIC.jpg","year":"2004","runtime":103},
+
+  
 
 
 
 
 ];
+
